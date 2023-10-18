@@ -1,10 +1,15 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from audioop import reverse
-
+from django.template.loader import render_to_string
 # Create your views here.
 def index(request):
-    return HttpResponse('уууу <br> ууууу <br> ууууууууууууууууууууууууууу ')
+    #t = render_to_string('women/index.html')
+   #return HttpResponse(t)
+    return render(request, 'women/index.html')
+
+def about(request):
+    return render(request, 'women/about.html')
 
 def megagidon(request):
     return HttpResponse('чундра чучундра  <br>  шакатака <br> ЛЯЛЯ  ПИПИ ')
