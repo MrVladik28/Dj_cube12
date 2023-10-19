@@ -4,27 +4,26 @@ from audioop import reverse
 from django.template.loader import render_to_string
 # Create your views here.
 def index(request):
-    #t = render_to_string('women/index.html')
-   #return HttpResponse(t)
     return render(request, 'women/index.html')
 
 def about(request):
     return render(request, 'women/about.html')
 
-def megagidon(request):
-    return HttpResponse('чундра чучундра  <br>  шакатака <br> ЛЯЛЯ  ПИПИ ')
+def russian(request):
+    return render(request, 'women/russian.html')
+
+def ussr(request):
+    return render(request, 'women/ussr.html')
 
 def gaming(request):
-    return HttpResponse(' <img height="50%" src= "https://pic.rutubelist.ru/video/65/65/6565133a32baee8c35c92699844e6e4c.jpg" \> <h1> чундра чучундра  <br> бум бум шакатака <br> ЛЯЛЯ  ПИПИ </h1> ')
+    return render(request, 'women/gaming.html')
 
-def personality(request):
-    return HttpResponse(' <img height="50%" \> <h1> чундра чучундра  <br> бум бум шакатака <br> ЛЯЛЯ  ПИПИ </h1> ')
+def persona(request):
+    return render(request, 'women/persona.html')
 
-def slavaSSSR(request):
-    return HttpResponse(' <img height="50%" src= "https://m.politnavigator.net/wp-content/uploads/2021/05/scale_1200-6.jpg" \>  <h1> СЛАВА СОВЕТСКОМУ СОЮЗУ  <br> СЛАВА СОВЕТСКОМУ СОЮЗУ <br> ЗА РОДИНУ ЗА СТАЛИНА </h1> ')
 
-def russion(request):
-    return HttpResponse(' <img height="50%" src= "https://sopranoclub.ru/images/kartinki-flag-rossii/file40156.jpg" \> <h1> СЛАВА РОССИИ <br> РОССИЯ СВЕЩЕННАЯ НАША СТРАНА <br> СЛАВА ПУТИНУ СЛАВА РОССИИ  </h1>  ')
+def persona(request):
+    return HttpResponse(' <h1> Привет это мои сайты выбирай любой и заходи !!! <br> Про игры: <a href="http://127.0.0.1:8000/gaming/">Gaming</a>". <br> Про Росссию:  <a href="http://127.0.0.1:8000/russian/">russian</a>". <br> Про СССР:  <a href="http://127.0.0.1:8000/ussr/">ussr</a>". </h1> ')
 
 def categories(request, cat_id, uri=None):
         if cat_id > 2020:
