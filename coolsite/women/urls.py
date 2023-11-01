@@ -12,7 +12,8 @@ urlpatterns = {
     path('ussr/', views.ussr, name='ussr'),
     path('gaming/', views.gaming, name='gaming'),
     path('persona/', views.persona, name='persona'),
-
+    path('it_cube/32', views.it_cube32, name='it_cube32'),
+    path('kapibara', views.kapibara, name='kapibara'),
     path('cats/<int:cat_id>/', categories, name='spisok'),
 }
 
