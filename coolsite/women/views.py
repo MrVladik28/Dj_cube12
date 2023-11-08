@@ -3,6 +3,22 @@ from django.shortcuts import render, redirect
 from audioop import reverse
 from django.template.loader import render_to_string
 # Create your views here.
+
+
+
+menu = [{'title': 'Главная страница', 'url_n' : 'home'},
+        {'title': 'about', 'url_n' : 'about'},
+        {'title': 'russian', 'url_n' : 'ussian'},
+        {'title': 'ussr', 'url_n' : 'ussr'},
+        {'title': 'gaming', 'url_n' : 'gaming'},
+        {'title': 'persona', 'url_n' : 'persona'},
+        {'title': 'it_cube/32', 'url_n' : 'it_cube/32'},
+        {'title': 'kapibara', 'url_n' : 'kapibara'},
+]
+
+
+
+
 def index(request):
     data = {
         'title': 'Главаная страница'
