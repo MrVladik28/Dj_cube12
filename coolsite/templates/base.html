@@ -14,12 +14,14 @@
 <body>
 
 <ul>
-    {%for m in menu %}
+    {% for m in menu %}
     <li>
+        <a href="#">{{m.title}}</a>
+        <p> {{m.url_n}} </p>
 
-        <a href="{% url m.url_n %}"> {{m.title}}</a>
 
     </li>
+
     {% endfor %}
 
 </ul>
