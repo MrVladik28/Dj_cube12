@@ -7,7 +7,8 @@ from django.template.loader import render_to_string
 
 
 menu = [{'title': 'Главная страница', 'url_n': 'home'},
-в
+
+
 
         ]
 
