@@ -7,6 +7,7 @@ from django.template.loader import render_to_string
 
 
 menu = [{'title': 'Главная страница', 'url_n': 'home'},
+        {'title': 'kapibara', 'url_n': 'home'},
 
 
 
@@ -16,6 +17,7 @@ menu = [{'title': 'Главная страница', 'url_n': 'home'},
 def index(request):
     data = {
         'title': 'Главаная страница'
+
     }
     return render(request, 'women/index.html', context={'menu': menu})
 
