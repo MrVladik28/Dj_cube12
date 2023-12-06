@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models
 
 class Women(models.Model):
@@ -15,15 +17,25 @@ class Pupil(models.Model):
         class_p = models.IntegerField(default=15)
 
 
-class Workers(models.Model):
+class VIPpersons(models.Model):
     FIO = models.CharField(max_length=30)
     Home = models.CharField(max_length=30)
-    Date = models.DateTimeField(blank=True)
-    Education = models.CharField(default="Высшее")
-    Language = models.IntegerField(max_length=30, blank=True)
-    Trips = models.BooleanField(defauit=true)
+    Date = models.DateTimeField(default=datetime.now)
+    Education = models.CharField(default="Высшее", max_length=30)
+    Language = models.CharField(default="English", max_length=30)
+    Trips = models.BooleanField(default=True)
     Post = models.CharField(max_length=30)
-    Salary = models.IntegerField(default=19000000000000000000000000000000000000000000000000)
+    Salary = models.IntegerField(default=70000)
+
+class Book_Love(models.Model):
+    name = models.CharField(max_length=100)
+    content = models.TextField(blank=True)
+    auther = models.CharField(max_length=70)
+    bithday = models.DateField()
+    is_interesting = models.BooleanField(default=True)
+    year_public = models.DateTimeField()
+    genre = models.CharField(max_length=30)
+    size = models.IntegerField()
 
 
 
