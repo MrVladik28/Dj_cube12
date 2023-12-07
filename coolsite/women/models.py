@@ -37,6 +37,11 @@ class Book_Love(models.Model):
     genre = models.CharField(max_length=30)
     size = models.IntegerField()
 
+#python manage.py makemigrations
+#python manage.py sqmigrate women 000_
+#python manage.py migrate
+#python manage.py shell_plus
+
 
 
 
