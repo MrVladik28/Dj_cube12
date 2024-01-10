@@ -15,6 +15,7 @@ urlpatterns = {
     path('it_cube/32', views.it_cube32, name='it_cube32'),
     path('kapibara', views.kapibara, name='kapibara'),
     path('cats/<int:cat_id>/', categories, name='spisok'),
+    path('women_id/<int:women_id>/', views.women_id, name='women_id'),
 }
 
 

@@ -1,10 +1,10 @@
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from audioop import reverse
 from django.template.loader import render_to_string
 
 # Create your views here.
-
+from .models import Women
 
 menu = [{'title': 'Главная страница', 'url_n': 'home'},
         {'title': 'kapibara', 'url_n': 'home'},
@@ -49,6 +49,19 @@ def kapibara(request):
         'kapibara1': kapibara1,
     }
     return render(request, 'women/kapibara.html', data)
+
+
+def women_id(request, women_id):
+    women_id = get_object_or_404(Women, pk=women_id)
+    data = {
+        'title': women_id.titile,
+        'menu': menu,
+        'women_id': women_id,
+        'cat_selected': 1,
+
+
+    }
+    return render(request, 'women/women_id.html', data)
 
 
 def ussr(request):
