@@ -4,7 +4,7 @@ from audioop import reverse
 from django.template.loader import render_to_string
 
 # Create your views here.
-from .models import Women
+from .models import Women, Book_Love
 
 menu = [{'title': 'Главная страница', 'url_n': 'home'},
         {'title': 'kapibara', 'url_n': 'home'},
@@ -13,13 +13,26 @@ menu = [{'title': 'Главная страница', 'url_n': 'home'},
 
         ]
 
+data_db = [
+    {'id': 1, 'title': 'Анджелина Джоли', 'content': '''<h1>Анджелина Джоли</h1> (англ. Angelina Jolie[7], при рождении Войт (англ. Voight), ранее Джоли Питт (англ. Jolie Pitt); род. 4 июня 1975, Лос-Анджелес, Калифорния, США) — американская актриса кино, телевидения и озвучивания, кинорежиссёр, сценаристка, продюсер, фотомодель, посол доброй воли ООН.
+    Обладательница премии «Оскар», трёх премий «Золотой глобус» (первая актриса в истории, три года подряд выигравшая премию) и двух «Премий Гильдии киноактёров США».''',
+     'is_published': True},
+    {'id': 2, 'title': 'Марго Робби', 'content': 'Биография Марго Робби', 'is_published': False},
+    {'id': 3, 'title': 'Джулия Робертс', 'content': 'Биография Джулия Робертс', 'is_published': True},
+]
+
+
+
 
 def index(request):
     data = {
-        'title': 'Главаная страница'
-
+        'title': 'Главная страница',
+        'menu': menu,
+        'women': data_db,
     }
-    return render(request, 'women/index.html', context={'menu': menu})
+    return render(request, 'women/index.html', context=data)
+
+
 
 
 kapibara1 = [
@@ -51,17 +64,33 @@ def kapibara(request):
     return render(request, 'women/kapibara.html', data)
 
 
-def women_id(request, women_id):
-    women_id = get_object_or_404(Women, pk=women_id)
+def how_women(request, women_id):
+    women = get_object_or_404(Women, pk=women_id)
     data = {
-        'title': women_id.titile,
+        'title': women.titile,
         'menu': menu,
-        'women_id': women_id,
+        'women': women,
         'cat_selected': 1,
 
 
+
     }
-    return render(request, 'women/women_id.html', data)
+    return render(request, 'women/women.html', data)
+
+
+def how_book(request, book_id):
+    book = get_object_or_404(Book_Love, pk=book_id)
+    data = {
+        'title': 'это страница книги',
+        'menu': menu,
+        'book': book,
+        'cat_selected': 1,
+
+
+
+    }
+
+    return render(request, 'women/book.html', data)
 
 
 def ussr(request):
