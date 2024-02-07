@@ -29,6 +29,7 @@ class VIPpersons(models.Model):
 
 class Book_Love(models.Model):
     name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=255, blank=True, db_index=True, default='')
     content = models.TextField(blank=True)
     auther = models.CharField(max_length=70)
     bithday = models.DateField()
