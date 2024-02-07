@@ -16,7 +16,7 @@ urlpatterns = {
     path('kapibara', views.kapibara, name='kapibara'),
     path('cats/<int:cat_id>/', categories, name='spisok'),
     path('women_id/<int:women_id>/', views.how_women, name='women'),
-    path('book_id/<int:book_id>/', views.how_book, name='book'),
+    path('book_id/<slug:book_slug>/', views.how_book, name='book'),
 }
 
 

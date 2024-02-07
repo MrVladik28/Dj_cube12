@@ -1,6 +1,8 @@
 from datetime import datetime
 
 from django.db import models
+from django.urls import reverse
+
 
 class Women(models.Model):
     titile = models.CharField(max_length=255)
@@ -29,7 +31,7 @@ class VIPpersons(models.Model):
 
 class Book_Love(models.Model):
     name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=255, blank=True, db_index=True, default='')
+    slug = models.SlugField(max_length=255, unique=True, db_index=True)
     content = models.TextField(blank=True)
     auther = models.CharField(max_length=70)
     bithday = models.DateField()
@@ -37,6 +39,9 @@ class Book_Love(models.Model):
     year_public = models.DateTimeField()
     genre = models.CharField(max_length=30)
     size = models.IntegerField()
+
+    def get_absolute_url(self):
+        return reverse('book', kwargs={'book_slug': self.slug})
 
 #python manage.py makemigrations
 #python manage.py sqmigrate women 000_

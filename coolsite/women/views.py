@@ -7,7 +7,7 @@ from django.template.loader import render_to_string
 from .models import Women, Book_Love
 
 menu = [{'title': 'Главная страница', 'url_n': 'home'},
-        {'title': 'kapibara', 'url_n': 'home'},
+        {'title': 'kapibara', 'url_n': 'kapibara'},
 
 
 
@@ -78,8 +78,8 @@ def how_women(request, women_id):
     return render(request, 'women/women.html', data)
 
 
-def how_book(request, book_id):
-    book = get_object_or_404(Book_Love, pk=book_id)
+def how_book(request, book_slug):
+    book = get_object_or_404(Book_Love, slug=book_slug)
     data = {
         'title': 'это страница книги',
         'menu': menu,
