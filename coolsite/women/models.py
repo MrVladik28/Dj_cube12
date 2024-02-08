@@ -41,7 +41,7 @@ class Book_Love(models.Model):
     size = models.IntegerField()
 
     def get_absolute_url(self):
-        return reverse('book', kwargs={'book_slug': self.slug})
+        return reverse('spisok', kwargs={'spisok': self.slug})
 
 #python manage.py makemigrations
 #python manage.py sqmigrate women 000_

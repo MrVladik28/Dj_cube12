@@ -26,10 +26,11 @@ data_db = [
 
 
 def index(request):
+    women = Women.objects.filter(is_published=1)
     data = {
         'title': 'Главная страница',
         'menu': menu,
-        'women': data_db,
+        'women': women,
     }
     return render(request, 'women/index.html', context=data)
 
@@ -52,6 +53,15 @@ kapibara1 = [
 
 def about(request):
     return render(request, 'women/about.html', {'title': 'О сайте'})
+
+def spisok(request):
+    data = {
+
+        'menu': menu,
+    }
+    return render(request, 'women/spisok.html')
+
+
 
 
 def russian(request):
