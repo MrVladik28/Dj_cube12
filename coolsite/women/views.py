@@ -8,6 +8,7 @@ from .models import Women, Book_Love
 
 menu = [{'title': 'Главная страница', 'url_n': 'home'},
         {'title': 'kapibara', 'url_n': 'kapibara'},
+        {'title': 'it_cube32', 'url_n': 'it_cube/32'},
 
 
 

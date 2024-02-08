@@ -47,6 +47,7 @@ class Book_Love(models.Model):
 #python manage.py sqmigrate women 000_
 #python manage.py migrate
 #python manage.py shell_plus
+#python manage.py runserver
 
 
 
